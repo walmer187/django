@@ -1,0 +1,62 @@
+{% extends 'clientes/base.html' %}
+
+{% block titulo %}
+    Listar Clientes
+{% endblock titulo %}
+
+{% block conteudo %}
+ 
+<table class="table">
+        <thead>
+            <th>CPF/CNPJ</th>
+            <th>NOME</th>
+            <th>SOBRENOME</th>
+            <th>RAZAO SOCIAL</th>
+            <th>ESTADO CIVIL</th>
+            <th>SEXO</th>
+            <th>CEP</th>
+            <th>LOGADOURO</th>
+            <th>NUMERO</th>
+            <th>BAIRRO</th>
+            <th>COMPLEMENTO</th>
+            <th>CIDADE</th>
+            <th>ESTADO</th>
+            <th>NUMERO TELEFONE</th>
+            <th>NUMERO CELULAR</th>
+            <th>E-MAIL</th>
+            <th>PERSONALIDADE</th>    
+            <th>AÇOES</th>    
+
+        </thead>
+        <tbody>
+            {% for i in clientes %}
+                <tr>
+                    <td><a href="{% url 'listar_cliente_cpf_cnpj' i.cpf_cnpj %} ">{{i.cpf_cnpj}}</a></td>
+                    <td>{{i.nome}}</td>
+                    <td>{{i.sobrenome}}</td>
+                    <td>{{i.razao_social}}</td>
+                    <td>{{i.estado_civil}}</td>
+                    <td>{{i.sexo}}</td>
+                    <td>{{i.cep}}</td>
+                    <td>{{i.logadouro}}</td>
+                    <td>{{i.numero}}</td>
+                    <td>{{i.bairro}}</td>
+                    <td>{{i.complemento}}</td>
+                    <td>{{i.cidade}}</td>
+                    <td>{{i.estado}}</td>
+                    <td>{{i.numero_telefone}}</td>
+                    <td>{{i.numero_celular}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.personalidade_juridica}}</td>
+                    <td>
+                        <a href="{% url 'editar_cliente' i.cpf_cnpj %}">Editar</a>
+                        <a href="{% url 'remover_cliente' i.cpf_cnpj %}">Remover</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'inserir_clientes' %}"> <button class="btn btn-primary">Cadastrar</button></a>
+
+    {% endblock conteudo %}

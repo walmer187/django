@@ -1,0 +1,123 @@
+{% extends 'clientes/base.html' %}
+{% load filtros %}
+
+{% block titulo %}
+    Cadastrar Clientes
+{% endblock titulo %}
+
+{% block conteudo %}
+    <!-- {{ form.as_p}} -->
+    <form method="POST">
+        
+        {% csrf_token %}
+
+
+        <div class="mb-3">
+            {{ form.cpf_cnpj.errors }}
+            <label>CPF/CNPJ: </label>
+            {{ form.cpf_cnpj|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.nome.errors }}
+            <label>NOME: </label>
+            {{ form.nome|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.sobrenome.errors }}
+            <label>SOBRENOME: </label>
+            {{ form.sobrenome|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.razao_social.errors }}
+            <label>RAZÃO SOCIAL: </label>
+            {{ form.razao_social|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.estado_civil.errors }}
+            <label>ESTADO CIVIL: </label>
+            {{ form.estado_civil|addclass:'form-select' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.sexo.errors }}
+            <label>SEXO: </label>
+            {{ form.sexo|addclass:'form-select' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.cep.errors }}
+            <label>CEP: </label>
+            {{ form.cep|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.logadouro.errors }}
+            <label>LOGADOURO: </label>
+            {{ form.logadouro|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.numero.errors }}
+            <label>NÚMERO: </label>
+            {{ form.numero|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.bairro.errors }}
+            <label>BAIRRO: </label>
+            {{ form.bairro|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.complemento.errors }}    
+            <label>COMPLEMENTO: </label>
+            {{ form.complemento|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.cidade.errors }}
+            <label>CIDADE: </label>
+            {{ form.cidade|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.estado.errors }}
+            <label>ESTADO: </label>
+            {{ form.estado|addclass:'form-select' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.numero_telefone.errors }}
+            <label>NUMERO TELEFONE: </label>
+            {{ form.numero_telefone|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.numero_celular.errors }}
+            <label>NUMERO CELULAR: </label>
+            {{ form.numero_celular|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.email.errors }}
+            <label>E-MAIL: </label>
+            {{ form.email|addclass:'form-control' }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.personalidade_juridica.errors }}
+            <label>PERSONALIDADE: </label>
+            {{ form.personalidade_juridica|addclass:'form-select' }}
+        </div>
+
+        <div class="mb-3">
+            <input type="submit" name="Cadastrar">
+        </div>
+        
+    </form>
+
+{% endblock conteudo %}

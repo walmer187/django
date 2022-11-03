@@ -1,0 +1,30 @@
+{% extends 'clientes/base.html' %}
+
+{% block titulo %}Listagem de Cliente{% endblock titulo %}
+
+
+{% block conteudo %}
+    <div class="card">
+        <div class="card-header">
+            Dados do Cliente
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">CPF/CNPJ: {{cliente.cpf_cnpj}}</h5>
+            <h5 class="card-title">Nome: {{cliente.nome}}</h5>
+            <h5 class="card-title">Sobreome: {{cliente.sobrenome}}</h5>
+            <h5 class="card-title">Razao Social: {{cliente.razao_social}}</h5>
+            <h5 class="card-title">Estado Civil: {{cliente.estado_cilvil}}</h5>
+            <h5 class="card-title">Cep: {{cliente.cep}}</h5>
+            <h5 class="card-title">Logadouro: {{cliente.logadouro}}</h5>
+            <h5 class="card-title">Numero: {{cliente.numero}}</h5>
+            <h5 class="card-title">Bairro: {{cliente.bairro}}</h5>
+            <h5 class="card-title">Complemento: {{cliente.complemento}}</h5>
+            <h5 class="card-title">Cidade: {{cliente.cidade}}</h5>
+            <h5 class="card-title">Estado: {{cliente.estado}}</h5>
+            <h5 class="card-title">Numero Telefone: {{cliente.numero_telefone}}</h5>
+            <h5 class="card-title">Numero Celular: {{cliente.numero_celular}}</h5>
+            <h5 class="card-title">E-mail: {{cliente.email}}</h5>
+            <h5 class="card-title">Pesonalidade Jurídica: {{cliente.personalidade_juridica}}</h5>
+        </div>
+    </div>
+{% endblock conteudo %}
